@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WebPilot AI</title>
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="app" id="app">
+  <aside class="side" id="sidebar">
+    <div class="wordmark">WebPilot AI</div>
+    <button class="btn-new" id="newChat" type="button">New conversation</button>
+    <section>
+      <h2>Recent activity</h2>
+      <ul class="list" id="recent"><li class="faint">No tasks yet</li></ul>
+    </section>
+    <section>
+      <h2>Example tasks</h2>
+      <ul class="list" id="sideExamples"></ul>
+    </section>
+    <section class="about">
+      <h2>Application information</h2>
+      <p>Plans your request, runs approved command-line tools as real subprocesses, and reports only what actually ran.</p>
+      <p class="mono faint" id="healthInfo">Checking backend…</p>
+    </section>
+  </aside>
+
+  <main class="main">
+    <header class="bar">
+      <button class="plain" id="menuBtn" type="button" aria-label="Open menu">Menu</button>
+      <span class="wordmark">WebPilot AI</span>
+      <button class="plain" id="panelBtn" type="button">Execution</button>
+    </header>
+    <div class="messages" id="messages" aria-live="polite"></div>
+    <form class="composer" id="composer">
+      <label class="sr" for="input">Describe a website task</label>
+      <textarea id="input" rows="1" maxlength="2000" placeholder="Describe a website task"></textarea>
+      <button type="submit" class="run" id="send">Run</button>
+    </form>
+  </main>
+
+  <section class="panel" id="panel">
+    <div class="tabs" role="tablist">
+      <button class="tab active" role="tab" data-tab="exec" type="button">Execution</button>
+      <button class="tab" role="tab" data-tab="result" type="button">Results</button>
+    </div>
+    <div class="tab-body" id="tab-exec"></div>
+    <div class="tab-body hidden" id="tab-result"></div>
+  </section>
+</div>
+<script src="/assets/script.js"></script>
+</body>
+</html>
